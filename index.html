@@ -6,17 +6,25 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gradient-to-r from-green-600 to-blue-900">
-  <div class=" flex mt-20 justify-center">
-    <!-- Search card container -->
-    <div class="bg-white rounded-full shadow-lg w-80">
-        <!-- Add your search form here -->
-                <input class="shadow appearance-none rounded-full w-full p-2 text-gray-700 mx-2" id="city" type="text" placeholder="Enter City Name ">
-      </div>
-        <!-- add search icon-->
-        <!-- <div class=" mx-12 rounded-fll bg-whi-500" >
-            <img src="search-regular-24.png" alt="search icon"> -->
+
+   <!-- Search card container -->
+      <div class="flex mt-20 justify-center">
+        <div class="bg-white rounded-full shadow-lg w-80">
+
+                    <input class="shadow appearance-none rounded-full w-full p-2 text-gray-700 mx-2" id="city" type="text" placeholder="Enter City Name ">
+          </div>
+            <!-- add search icon-->
+            <div class="bg-white ml-4 p-2 rounded-full">
+              <img src="search-regular-24.png" alt="Search Icon" class="w-6 h-6">
+          </div>
         </div>
-    </div>
-</div>
+     </div>
+
+     <!-- weather image -->
+     <div class="flex flex-col justify-center items-center">
+        <img src="Weather-No-Background.png" alt="cloud img" class="w-56 mt-10">
+        <h1 class="text-white text-9xl mt-10">22°c</h1>
+        <h2 class="text-white text-5xl">New York</h2>
+     </div>
 </body>
 </html>
