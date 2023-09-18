@@ -11,7 +11,7 @@
       <div class="flex mt-20 justify-center">
         <div class="bg-white rounded-full shadow-lg w-80">
 
-                    <input class="shadow appearance-none rounded-full w-full p-2 text-gray-700 mx-2" id="city" type="text" placeholder="Enter City Name ">
+                    <input class="shadow-lg appearance-none rounded-full w-full p-2 text-gray-700 " id="city" type="text" placeholder="Enter City Name ">
           </div>
             <!-- add search icon-->
             <div class="bg-white ml-4 p-2 rounded-full">
@@ -26,5 +26,40 @@
         <h1 class="text-white text-9xl mt-10">22°c</h1>
         <h2 class="text-white text-5xl">New York</h2>
      </div>
+
+     <!-- Weather speed and humidity -->
+     <div class="flex items-center">
+     <div class="flex flex-row mt-20 mx-10 ">
+        <img src="humidity.png" alt="wind speed" class="w-24 h-14  ">
+        <div class="flex-col mx-2 text-white">
+          <h1 class="text-4xl">64%</h1>
+          <h1 class="mt-1">humidity</h1>
+        </div>       
+      </div>
+      <div class="flex flex-row mt-20 ml-auto mr-10">
+          <img src="wind.png" alt="wind speed" class="w-24 h-16  ">
+          <div class="flex-col mx-2 text-white">
+            <h1 class="text-3xl">15 Km/h</h1>
+            <h1 class="mt-1">Wind Speed</h1>
+          </div>
+     </div>
+<script>
+     const apiKey ="68b1dcb864d95e6ff55520d15bea6b64";
+     const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
+
+async function checkWeather() {
+   const cityInput = document.getElementById("cityInput").value;
+   const response = await fetch(apiUrl + cityInput + `&appid=${apiKey}`);
+   const data = await response.json();
+
+   document.getElementById("temperature").textContent = `${data.main.temp}°C`;
+   document.getElementById("cityName").textContent = data.name;
+   document.getElementById("humidity").textContent = `${data.main.humidity}%`;
+   document.getElementById("windSpeed").textContent = `${data.wind.speed} Km/h`;
+}
+
+// Call the function when the page loads
+checkWeather();
+    </script>
 </body>
 </html>
